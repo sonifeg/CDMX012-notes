@@ -58,6 +58,7 @@ label {
   color: #7f259dc5;
   font-weight: 600;
   padding-left: 10px;
+  font-size: 20px;
 }
 
 .inputs::placeholder {
