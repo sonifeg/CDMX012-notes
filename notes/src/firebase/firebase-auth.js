@@ -118,12 +118,12 @@ export const login = (setErrorEmail, setErrorPassword, email, password) => {
     });
 };
 
-// logOut-------------------------------------------------------------------//
+// logOut---------------------------------------------------------------------//
 export function logOut() {
   return signOut(auth);
 }
 
-// hook onauth-------------------------------------------------------------//
+// hook onauth---------------------------------------------------------------//
 export function useAuth() {
   const [currentUser, setCurrentUser] = useState();
 
