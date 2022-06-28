@@ -13,7 +13,7 @@ img {
 }
 
 .link {
-  flex-basis: fit-content;
+  /* flex-basis: fit-content; */
   align-items: flex-start;
   display: flex;
   height: fit-content;
