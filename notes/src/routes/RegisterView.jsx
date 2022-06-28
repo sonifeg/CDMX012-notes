@@ -12,6 +12,8 @@ export default function RegisterView() {
   const [loading, setLoading] = useState(false);
   const currentUser = useAuth();
   const navigate = useNavigate();
+  const [errorEmail, setErrorEmail] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
 
   async function handleRegister() {
     setLoading(true);
@@ -22,8 +24,16 @@ export default function RegisterView() {
         passwordRef.current.value
       );
       navigate("/notes");
-    } catch {
-      alert("error!");
+    } catch (error) {
+      if (error.code === "auth/invalid-email") {
+        setErrorEmail("Invalid email");
+      } else if (error.code === "auth/email-already-in-use") {
+        setErrorEmail("Email already in use");
+      } else if (error.code === "auth/wrong-password") {
+        setErrorPassword("Invalid password");
+      } else if (error.code === "auth/weak-password") {
+        setErrorPassword(" Password should be at least 6 characters ");
+      }
     }
     setLoading(false);
   }
@@ -58,6 +68,9 @@ export default function RegisterView() {
           autoComplete="off"
           required
         />
+        <section className="title-error-sec">
+          {errorEmail && <p className="title-error blink">{errorEmail}</p>}
+        </section>
         <input
           type="password"
           ref={passwordRef}
@@ -67,6 +80,11 @@ export default function RegisterView() {
           autoComplete="off"
           required
         />
+        <section className="title-error-sec">
+          {errorPassword && (
+            <p className="title-error blink">{errorPassword}</p>
+          )}
+        </section>
         <button
           className="btns"
           disabled={loading || currentUser}
