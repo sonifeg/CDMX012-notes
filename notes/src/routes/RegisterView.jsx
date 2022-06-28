@@ -39,7 +39,7 @@ export default function RegisterView() {
         <img className="back" src={back} alt="backhome" />
       </Link>
       <form className="containerForm">
-        <label id="label1">Create New Account:</label>
+        <label id="label1">Create Account:</label>
         <input
           type="text"
           ref={usernameRef}
