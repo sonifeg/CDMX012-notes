@@ -36,7 +36,7 @@ export default function RegisterView() {
       }
     }
     setLoading(false);
-  }
+  };
 
   return (
     <section className="login_container">
