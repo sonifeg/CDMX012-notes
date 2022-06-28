@@ -16,10 +16,11 @@ img {
   flex-basis: fit-content;
   align-items: flex-start;
   display: flex;
-  height: 100%;
+  height: fit-content;
   margin-left: 20px;
   position: absolute;
   width: 100%;
+
   /* 
   position: absolute;
   display: flex;
