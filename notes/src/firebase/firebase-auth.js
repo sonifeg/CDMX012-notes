@@ -93,9 +93,30 @@ export function register(username, email, password) {
 }
 
 // signin with mail and password-----------------------------------------//
-export function login(email, password) {
-  return signInWithEmailAndPassword(auth, email, password);
-}
+export const login = (setErrorEmail, setErrorPassword, email, password) => {
+  setErrorEmail("");
+  setErrorPassword("");
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+    })
+    .catch((error) => {
+      console.log(error.message);
+      if (error.code === "auth/invalid-email") {
+        console.log(error.code);
+        setErrorEmail("Invalid email");
+      } else if (error.code === "auth/wrong-password") {
+        console.log(error.code);
+        setErrorPassword("Invalid password");
+      } else if (error.code === "auth/internal-error") {
+        console.log(error.code);
+        setErrorPassword("Enter a password");
+      } else if (error.code === "auth/user-not-found") {
+        console.log(error.code);
+        setErrorEmail("User not found");
+      }
+    });
+};
 
 // logOut---------------------------------------------------------------//
 export function logOut() {

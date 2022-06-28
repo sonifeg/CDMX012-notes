@@ -6,6 +6,7 @@
   background-image: url("../assets/backgroundlogin.png");
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden;
 }
 
 img {
@@ -13,21 +14,12 @@ img {
 }
 
 .link {
-  /* flex-basis: fit-content; */
   align-items: flex-start;
   display: flex;
   height: fit-content;
   margin-left: 20px;
   position: absolute;
   width: 100%;
-
-  /* 
-  position: absolute;
-  display: flex;
-  width: 100%;
-  height: 100%;
-  align-items: flex-start;
-  margin-left: 20px; */
 }
 
 .back {
@@ -77,6 +69,68 @@ label {
   padding-left: 10px;
 }
 
+.title-error-sec {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+}
+
+.title-error {
+  width: 100%;
+  height: fit-content;
+  color: #38040e;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+}
+
+.blink {
+  animation-name: blink;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  -webkit-animation-name: blink;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .btns {
   width: 115px;
   height: 37px;
@@ -86,7 +140,8 @@ label {
   line-height: 16px;
   cursor: pointer;
   background: rgba(255, 176, 0, 0.7);
-  border: 2px solid #de1344;
+  /* border: 2px solid #de1344; */
+  border: none;
   border-radius: 8px;
   margin-top: 10px;
   filter: drop-shadow(4px 4px 5px #de1344);
@@ -126,13 +181,6 @@ label {
   font-weight: 800;
   cursor: pointer;
 }
-/* 
-#pError{
-  width: fit-content;
-  height: fit-content;
-  color: #f2a928;
-  font-size: 14px;
-} */
 
 /* ----------------Tabblet responsive--------------------- */
 @media only screen and (max-width: 999px) and (min-width: 760px) {

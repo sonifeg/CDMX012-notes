@@ -3,7 +3,6 @@ import "../components/LoginRegisterView.css";
 import logo from "../assets/big-logo.svg";
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
-// import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../firebase/firebase-config";
 import {
   onAuthStateChanged,
@@ -16,6 +15,8 @@ import {
 export default function LoginView() {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const [errorEmail, setErrorEmail] = useState(false);
+  const [errorPassword, setErrorPassword] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
@@ -38,24 +39,9 @@ export default function LoginView() {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  async function handleSignIn() {
-    login(emailRef.current.value, passwordRef.current.value);
-    setLoading(true)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        alert("You are In!");
-        navigate("/notes");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        if (errorCode === "auth/wrong-password") {
-          alert("Wrong password, try again.");
-        }
-        if (errorCode === "auth/invalid-email") {
-          alert("write a valid email");
-        }
-        setLoading(false);
-      });
+  async function handleSignIn(e) {
+    e.preventDefault();
+    login(setErrorEmail, setErrorPassword,emailRef.current.value, passwordRef.current.value);
   }
 
   return (
@@ -72,6 +58,9 @@ export default function LoginView() {
           autoComplete="off"
           required
         />
+         <section className="title-error-sec">
+          {errorEmail && <p className="title-error blink">{errorEmail}</p>}
+        </section>
         <input
           type="password"
           ref={passwordRef}
@@ -81,6 +70,11 @@ export default function LoginView() {
           autoComplete="off"
           required
         />
+        <section className="title-error-sec">
+          {errorPassword && (
+            <p className="title-error blink">{errorPassword}</p>
+          )}
+        </section>
         <button
           className="btns"
           type="button"
@@ -100,7 +94,6 @@ export default function LoginView() {
           {" "}
           Create Account{" "}
         </Link>
-        {/* <button id="btnCreateAcc" >Create Account</button> */}
       </div>
     </section>
   );
