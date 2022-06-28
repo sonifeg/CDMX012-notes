@@ -24,7 +24,7 @@ export default function NotesView() {
           <NotesViewContainer />
         </section>
       </main>
-      <FooterNotes />
+      <FooterNotes name='Sonia Felizardo Gomez ' />
     </section>
   );
 }

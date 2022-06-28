@@ -12,16 +12,24 @@ img {
   height: 45%;
 }
 
-.link{
+.link {
+  flex-basis: fit-content;
+  align-items: flex-start;
+  display: flex;
+  height: 100%;
+  margin-left: 20px;
+  position: absolute;
+  width: 100%;
+  /* 
   position: absolute;
   display: flex;
   width: 100%;
   height: 100%;
   align-items: flex-start;
-  margin-left: 20px;
+  margin-left: 20px; */
 }
 
-.back{
+.back {
   width: 61px;
   height: 79px;
 }
@@ -44,7 +52,7 @@ label {
 }
 
 #label1 {
-  color: #DE1344;
+  color: #de1344;
   margin: 15px 0 10px;
   font-weight: 800;
 }
@@ -71,16 +79,16 @@ label {
 .btns {
   width: 115px;
   height: 37px;
-  color: #DE1344;
+  color: #de1344;
   font-weight: 800;
   font-size: 14px;
   line-height: 16px;
   cursor: pointer;
   background: rgba(255, 176, 0, 0.7);
-  border:  2px solid #DE1344;
+  border: 2px solid #de1344;
   border-radius: 8px;
   margin-top: 10px;
-  filter: drop-shadow(4px 4px 5px #DE1344);
+  filter: drop-shadow(4px 4px 5px #de1344);
 }
 
 .whiteText {
@@ -90,7 +98,7 @@ label {
 }
 
 .whiteText2 {
-  color:#7F259D;
+  color: #7f259d;
   font-size: 18px;
   width: fit-content;
   font-weight: 800;
@@ -108,7 +116,7 @@ label {
 }
 
 #btnCreateAcc {
-  color: #7F259D;
+  color: #7f259d;
   font-size: 18px;
   border: none;
   background: none;
@@ -130,44 +138,44 @@ label {
   .login_container {
     background-image: url("../assets/backgroundtablet.png");
   }
-  
+
   .containerForm {
     width: 70%;
   }
-  
+
   label {
     font-size: 30px;
   }
-  
+
   #label1 {
     margin: 30px 0 10px;
     font-weight: 800;
   }
-  
+
   .inputs {
     width: 80%;
     height: 60px;
     margin: 15px;
   }
-  
+
   .inputs::placeholder {
     font-size: 18px;
   }
-  
+
   .btns {
     width: 150px;
     height: 50px;
-    color: #DE1344;
+    color: #de1344;
     font-size: 18px;
     margin-top: 15px;
   }
-  
+
   .whiteText {
     color: #ffffff;
     margin-top: 10px;
     font-weight: 800;
   }
-  
+
   .whiteText2 {
     font-size: 30px;
     width: fit-content;
@@ -175,15 +183,15 @@ label {
     margin-right: 20px;
     margin-left: 10px;
   }
-  
+
   .createAccContainer {
     margin-top: 25px;
   }
-  
+
   #btnCreateAcc {
     color: #ffffff;
     font-size: 25px;
-    border:#ffffff dashed 2px;
+    border: #ffffff dashed 2px;
     padding: 2px;
     background: rgba(255, 176, 0, 0.5);
   }
@@ -198,7 +206,7 @@ label {
     grid-template-rows: 90% 10%;
     background-image: url("../assets/backgrounddesktop.png");
   }
-  
+
   img {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -206,7 +214,7 @@ label {
     width: auto;
     height: 95%;
   }
-  
+
   .containerForm {
     grid-column: 2/3;
     grid-row: 1/2;
@@ -214,58 +222,57 @@ label {
     width: 90%;
     height: 90%;
   }
-  
+
   label {
     font-size: 38px;
   }
-  
+
   #label1 {
-    color: #DE1344;
+    color: #de1344;
     margin: 50px 0 15px;
     font-weight: 800;
   }
-  
+
   .inputs {
     width: 70%;
     height: 50px;
     margin: 15px;
   }
-  
+
   .inputs::placeholder {
     font-size: 18px;
   }
-  
+
   .btns {
     width: 150px;
     height: 50px;
-    color: #DE1344;
+    color: #de1344;
     font-size: 18px;
     margin-top: 15px;
   }
-  
+
   .whiteText {
     color: #ffffff;
     font-weight: 600;
   }
-  
+
   .whiteText2 {
-    color:#7F259D;
+    color: #7f259d;
     font-size: 30px;
     width: fit-content;
     font-weight: 800;
     margin-right: 20px;
     margin-left: 10px;
   }
-  
+
   .createAccContainer {
-    height:fit-content;
+    height: fit-content;
     grid-column: 1/3;
     grid-row: 2/3;
     margin-bottom: 50px;
   }
-  
+
   #btnCreateAcc {
     font-size: 30px;
   }
-  
 }

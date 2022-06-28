@@ -1,11 +1,9 @@
 /* eslint-disable no-unused-vars */
 import "../components/LoginRegisterView.css";
 import logo from "../assets/big-logo.svg";
-
 import { useEffect, useState, useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 // import { onAuthStateChanged } from "firebase/auth";
-
 import { auth } from "../firebase/firebase-config";
 import {
   onAuthStateChanged,

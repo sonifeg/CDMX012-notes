@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import { logOut, doc, getDoc, updateDoc  } from "../firebase/firebase-auth";
 import "../components/NewNote.css";
 import { db } from "../firebase/firebase-config";
+import HeaderNotes from "../components/HeaderNotes";
+import FooterNotes from "../components/FooterNotes";
 
 export default function Edit() {
   const [loading, setLoading] = useState(false);
@@ -50,24 +52,7 @@ export default function Edit() {
   return (
     <section className="notes_container">
     {/* --------------------header section---------------------- */}
-    <header className="header">
-      <img
-        className="small_logo"
-        src={require("../assets/small-logo.png")}
-        alt="logoPostMeSmall"
-      />
-      {/* <p>{user.displayName}</p> */}
-      <nav className="icons">
-        <p>LogOut</p>
-        <img
-          className="log_out"
-          src={require("../assets/out.png")}
-          alt="logOut"
-          onClick={handleLogOut}
-          disabled={loading}
-        />
-      </nav>
-    </header>
+    <HeaderNotes />
 
     {/* --------------------main section------------------------ */}
     <main className="main">
@@ -117,19 +102,7 @@ export default function Edit() {
     </main>
 
     {/* --------------------footer section---------------------- */}
-    <footer className="footer">
-      <img
-        className="copy"
-        src={require("../assets/copy.png")}
-        alt="copyright"
-      />
-      <p>Copyright Sonia Felizardo Gomez</p>
-      <img
-        className="github"
-        src={require("../assets/github.png")}
-        alt="github"
-      />
-    </footer>
+    <FooterNotes name='Sonia Felizardo Gomez'/>
   </section>
 );
 }
