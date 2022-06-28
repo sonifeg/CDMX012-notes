@@ -39,9 +39,9 @@ export default function LoginView() {
   const passwordRef = useRef();
 
   async function handleSignIn() {
-    login(emailRef.current.value, passwordRef.current.value)
+    login(emailRef.current.value, passwordRef.current.value);
     setLoading(true)
-    .then((userCredential) => {
+      .then((userCredential) => {
         const user = userCredential.user;
         alert("You are In!");
         navigate("/notes");
@@ -89,7 +89,7 @@ export default function LoginView() {
         >
           Login
         </button>
-        <label className="whiteText">Or with:</label>
+        <label className="whiteText">Or:</label>
         <button className="btns" onClick={loginGoogle} type="button">
           Google
         </button>
