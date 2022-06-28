@@ -28,8 +28,6 @@ export default function RegisterView() {
     setLoading(false);
   }
 
-
-
   return (
     <section className="login_container">
       <img
@@ -38,14 +36,10 @@ export default function RegisterView() {
         alt="logoPostMe"
       />
       <Link to="/" className="link">
-      <img
-        className="back"
-        src={back}
-        alt="backhome"
-      />
+        <img className="back" src={back} alt="backhome" />
       </Link>
       <form className="containerForm">
-        <label id="label1">Create Account:</label>
+        <label id="label1">Create New Account:</label>
         <input
           type="text"
           ref={usernameRef}
